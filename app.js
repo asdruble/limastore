@@ -39,6 +39,8 @@ const productCatalog = [
       'Perfeito para manter sua bebida favorita na temperatura ideal durante reuniões e viagens.',
     price: 450,
     badge: 'Novidade',
+    image:
+      'https://images.unsplash.com/photo-1497636577773-f1231844b336?auto=format&fit=crop&w=600&q=80',
   },
   {
     id: 'tee',
@@ -47,6 +49,8 @@ const productCatalog = [
       'Camiseta em algodão orgânico com a marca Lima Consulting para vestir com orgulho.',
     price: 600,
     badge: 'Edição limitada',
+    image:
+      'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=600&q=80',
   },
   {
     id: 'backpack',
@@ -54,6 +58,8 @@ const productCatalog = [
     description:
       'Compartimentos inteligentes para notebook, cabos e documentos. Ideal para o dia a dia.',
     price: 1250,
+    image:
+      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80',
   },
   {
     id: 'speaker',
@@ -61,6 +67,8 @@ const productCatalog = [
     description:
       'Potência portátil com resistência à água e 12h de bateria para animar qualquer ocasião.',
     price: 950,
+    image:
+      'https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=600&q=80',
   },
   {
     id: 'notebook',
@@ -69,6 +77,8 @@ const productCatalog = [
       'Caderno reutilizável com páginas reposicionáveis. Organize suas ideias de forma sustentável.',
     price: 380,
     badge: 'Eco friendly',
+    image:
+      'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=600&q=80',
   },
   {
     id: 'experience',
@@ -77,6 +87,8 @@ const productCatalog = [
       'Voucher para um jantar exclusivo em restaurantes parceiros em São Paulo.',
     price: 2100,
     badge: 'Premium',
+    image:
+      'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80',
   },
 ];
 
@@ -169,13 +181,16 @@ const renderCatalog = () => {
 
       return `
         <article class="product-card" data-id="${product.id}">
-          <div class="badge">✨ Catálogo LimaStore</div>
+          <figure class="product-card__media">
+            <img src="${product.image}" alt="${product.name}" loading="lazy" />
+            <figcaption class="badge">✨ Catálogo LimaStore</figcaption>
+          </figure>
           <h4>${product.name}</h4>
           <p>${product.description}</p>
           <span class="price">${product.price} moedas</span>
           ${
             product.badge
-              ? `<span class="badge">${product.badge}</span>`
+              ? `<span class="badge badge--highlight">${product.badge}</span>`
               : ''
           }
           <button class="primary" ${disabled ? 'disabled' : ''}>
