@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LimaStore - Resgate com Feedz Coins</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__content">
+        <img src="logo.svg" alt="LimaStore" class="hero__logo" />
+        <h1>Resgate produtos incríveis com suas moedas Feedz</h1>
+        <p>
+          Faça login com seu e-mail corporativo e utilize suas moedas para
+          resgatar itens exclusivos para colaboradores da Lima Consulting.
+        </p>
+      </div>
+      <div class="hero__illustration" aria-hidden="true">
+        <div class="blob"></div>
+      </div>
+    </header>
+
+    <main>
+      <section class="card" id="login-card">
+        <h2>Identifique-se</h2>
+        <form id="login-form" novalidate>
+          <label class="field">
+            <span>E-mail corporativo</span>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="nome.sobrenome@limaconsulting.com"
+              autocomplete="email"
+              required
+            />
+          </label>
+          <button type="submit" class="primary">Entrar</button>
+          <p class="helper">
+            Dica: utilize um dos usuários fictícios abaixo para explorar o
+            protótipo. No futuro, a autenticação será realizada com a API da
+            Feedz.
+          </p>
+        </form>
+        <ul class="sample-users" id="sample-users"></ul>
+      </section>
+
+      <section class="card hidden" id="dashboard" aria-live="polite">
+        <div class="dashboard__header">
+          <div>
+            <h2 id="welcome"></h2>
+            <p>
+              Você possui
+              <strong><span id="coins"></span> moedas Feedz</strong>.
+            </p>
+          </div>
+          <button id="logout" class="ghost">Sair</button>
+        </div>
+
+        <section class="catalog">
+          <header class="catalog__header">
+            <h3>Catálogo de produtos</h3>
+            <p>
+              Escolha um item e clique em "Resgatar". O saldo será atualizado em
+              tempo real.
+            </p>
+          </header>
+          <div class="catalog__grid" id="catalog"></div>
+        </section>
+
+        <section class="history">
+          <h3>Histórico de resgates</h3>
+          <ul id="history"></ul>
+          <p id="history-empty" class="muted">
+            Você ainda não realizou resgates. Comece escolhendo um produto do
+            catálogo!
+          </p>
+        </section>
+
+        <section class="integration">
+          <h3>Integração com Feedz</h3>
+          <p>
+            Neste protótipo, os saldos de moedas e o catálogo estão mockados. A
+            versão final deve consumir a API da Feedz para validar o saldo de
+            cada colaborador em tempo real e registrar os resgates com a Lima
+            Store.
+          </p>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="year"></span> Lima Consulting - LimaStore.</p>
+    </footer>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
